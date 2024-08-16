@@ -2,6 +2,8 @@
 
 This repository contains Stata code for cleaning and analyzing state-level disability claims data from the Social Security Administration's State Agencies Monthly Workload (MOWL) dataset. The dataset covers the years 2002–2017 for all 50 states and the District of Columbia.
 
+Data excludes claims processed in Guam, Puerto Rico, federal disability processing centers, and certain extended services teams.
+
 ## Repository Structure
 
 - **data/raw/**: Contains the raw MOWL dataset.
@@ -40,20 +42,11 @@ This script performs the following tasks:
 
 This script replicates the results from Gary V. Engelhardt's paper, "The minimum wage and DI claims":
 
-1. **Figure 1**: 
-   - Generates indices for SSDI-only, SSDI+SSI, and SSDI-only + concurrent claims, normalized to 2001 values.
-   - Creates line graphs for each claim type over the years 2001-2017.
+1. **Figure 1**:
 
-2. **Data Handling**:
-   - Uses the cleaned dataset `ssa_state.dta`.
-   - Excludes SSI Disabled Child claims for certain calculations.
+   - Figure one is from 2001-2017. One line represents the unemployment rate and the other being claims.
+   - Code generates indices for SSDI-only, SSDI+SSI, and SSDI-only + concurrent claims.
+  
+2. **Separate Analysis**
 
-## Sample Notes
-
-The dataset used is a state-year panel of DI claims for 2002–2017. It includes claims processed in the 50 states and the District of Columbia but excludes claims processed in Guam, Puerto Rico, federal disability processing centers, and certain extended services teams.
-
-## How to Run
-
-1. Clone this repository:
-   ```sh
-   git clone https://github.com/yourusername/ssa-state-cleaning.git
+   - 
