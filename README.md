@@ -23,20 +23,19 @@ This script performs the following tasks:
 
 2. **Variable Renaming**: Renames the original variables by adding an underscore prefix to avoid conflicts with Stata's reserved keywords.
 
-3. **Technical Variable Generation**:
-   - Generates state FIPS codes.
-   - Excludes specific records (federal disability processing components, Guam, Puerto Rico, and certain extended services teams).
-   - Extracts and formats date information.
-
-4. **Disability Claims Variables**:
-   - Creates variables for different types of claims, including SSDI-only, SSI-only, and concurrent claims.
+3. **Variable Generation**:
+   - Generates state FIPS codes.FIPS codes are government issued numerical identifiers that are used to uniquely identify states. FIPS codes are more commonly used 
+     in these types of datasets over state name or state abbreviation.
+   - Excludes specific records as in the Engelhart paper. (federal disability processing components, Guam, Puerto Rico, and certain extended services teams).
+   - Extracts and formats date information. The SSI dataset we has the dates formatted as year-month. The "-" makes the variable a string. However we needed to 
+     merge the SSI and minimum wage datasets and the minimum wage dataset contained the dates as a numerical variable in ym format so we converted the SSI date 
+     variable to ym as well to allow merging.
+   - Creates variables for different types of claims, including SSDI-only, SSI-only, and concurrent claims. 
    - Calculates allowance rates for each claim type.
    - Generates variables for reconsiderations and continuing disability reviews (CDRs).
+   - Combines SSDI-only and concurrent SSDI & SSI claims into a single set of variables. 
 
-5. **Calculated DI Variables**:
-   - Combines SSDI-only and concurrent SSDI & SSI claims into a single set of variables.
-
-6. **Save Cleaned Data**: The final cleaned dataset is saved as `ssa_state.dta` in the `data/final/` directory.
+4. **Save Cleaned Data**: The final cleaned dataset is saved as `ssa_state.dta` in the `data/final/` directory.
 
 ## Replication (`ssa_state_replication.do`)
 
