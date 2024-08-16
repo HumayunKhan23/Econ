@@ -17,7 +17,7 @@ This repository contains Stata code for cleaning and analyzing state-level disab
 
 This script performs the following tasks:
 
-1. **Import Raw Data**: Imports the raw data from the Excel file `SSA-SA-MOWL.xls`.
+1. **Import Raw Data**: Imports the raw data from the Excel file `SSA-SA-MOWL.xls`. This can be found at this link https://www.ssa.gov/disability/data/SSA-SA-MOWL.xls
 
 2. **Variable Renaming**: Renames the original variables by adding an underscore prefix to avoid conflicts with Stata's reserved keywords.
 
@@ -38,7 +38,7 @@ This script performs the following tasks:
 
 ## Replication (`ssa_state_replication.do`)
 
-This script replicates the results from Engelhardt's paper:
+This script replicates the results from Gary V. Engelhardt's paper, "The minimum wage and DI claims":
 
 1. **Figure 1**: 
    - Generates indices for SSDI-only, SSDI+SSI, and SSDI-only + concurrent claims, normalized to 2001 values.
